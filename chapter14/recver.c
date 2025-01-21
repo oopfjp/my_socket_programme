@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #define BUF_SIZE 1024
 int main(int argc, char* argv[]){
     
@@ -27,4 +28,5 @@ int main(int argc, char* argv[]){
     fputs(buf, stdout);
 
     sendto(sock, "messages recepted over!", 24, 0, (struct sockaddr*)&sock_adr, adr_sz);
+    close(sock);
 }

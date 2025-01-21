@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #define BUF_SIZE 1024
 int main(int argc, char* argv[]){
     
@@ -21,4 +22,6 @@ int main(int argc, char* argv[]){
 
     recvfrom(sock, buf, BUF_SIZE, 0, (struct sockaddr*)&sock_adr, &adr_sz);
     puts(buf);
+    close(sock);
+    return 0;
 }
