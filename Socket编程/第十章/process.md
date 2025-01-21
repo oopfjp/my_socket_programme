@@ -1,0 +1,1 @@
+![image-20250111141820783](D:\Typora\Socket编程\第十章\fork_zombie.png)
