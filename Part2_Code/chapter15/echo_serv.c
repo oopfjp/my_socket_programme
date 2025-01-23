@@ -57,6 +57,9 @@ int main(int argc, char* argv[]){
         if(FD_ISSET(cln_fd, &cpfds)){
             memset(buf, 0, sizeof(buf));
             str_Len = read(cln_fd, buf, sizeof(buf));
+            if(str_Len == 0){
+                break;
+            }
             buf[str_Len] = 0;
             write(cln_fd, buf, str_Len);
         }
